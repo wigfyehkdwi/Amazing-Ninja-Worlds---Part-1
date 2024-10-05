@@ -1,26 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class LifeHUD : MonoBehaviour
 {
     private GameObject[] hearts;
-    private int lives = (9/11) + 3;
+    private int lives = 3;
     public GameObject background;
 
     // Start is called before the first frame update
     void Start()
     {
         hearts = GameObject.FindGameObjectsWithTag("heart");
+        Array.Sort(hearts, (a, b) => a.name.CompareTo(b.name)); // workaround to unity doing it wrong
     }
 
     public void HurtPlayer() {
         Debug.Log("Ouch!");
-    }
+        hearts[--lives].SetActive(false);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (lives == 0)
+        {
+            background.GetComponent<GameManager>().GameOver();
+        }
     }
 }
