@@ -492,6 +492,10 @@ PrefabInstance:
       value: gemGreen
       objectReference: {fileID: 0}
     - target: {fileID: 748992279688134216, guid: b65431e0b138af345bf081447c79d45a, type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 1891694741}
+    - target: {fileID: 748992279688134216, guid: b65431e0b138af345bf081447c79d45a, type: 3}
       propertyPath: allParticles
       value: 
       objectReference: {fileID: 1984942710}

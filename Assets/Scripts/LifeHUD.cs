@@ -23,4 +23,13 @@ public class LifeHUD : MonoBehaviour
             background.GetComponent<GameManager>().GameOver();
         }
     }
+
+    public void HealPlayer()
+    {
+        Debug.Log("Yay!");
+        if (lives < 3)
+        {
+            hearts[lives++].SetActive(true);
+        }
+    }
 }
